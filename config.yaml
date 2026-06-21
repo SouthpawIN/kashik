@@ -1,0 +1,100 @@
+model:
+  base_url: ***
+  default: qwen/qwen3.6-flash
+  provider: nous
+providers: {}
+fallback_providers: []
+credential_pool_strategies: {}
+toolsets:
+- hermes-cli
+agent:
+  max_turns: 120
+  gateway_timeout: 3600
+  restart_drain_timeout: 180
+  api_max_retries: 3
+  tool_use_enforcement: auto
+terminal:
+  backend: local
+  cwd: .
+  timeout: 180
+  persistent_shell: true
+browser:
+  inactivity_timeout: 120
+  command_timeout: 30
+file_read_max_chars: 200000
+tool_output:
+  max_bytes: 50000
+  max_lines: 2000
+  max_line_length: 2000
+compression:
+  enabled: true
+  threshold: 0.95
+  target_ratio: 0.2
+  protect_last_n: 20
+auxiliary:
+  vision:
+    provider: nous
+    model: qwen/qwen3.5-flash-02-23
+  web_extract:
+    provider: nous
+    model: qwen/qwen3.5-flash-02-23
+  compression:
+    provider: nous
+    model: qwen/qwen3.5-flash-02-23
+  session_search:
+    provider: nous
+    model: qwen/qwen3.5-flash-02-23
+  title_generation:
+    provider: nous
+    model: qwen/qwen3.5-flash-02-23
+display:
+  compact: false
+  personality: kawaii
+  skin: mono
+  language: en
+  tui_status_indicator: kaomoji
+  show_cost: false
+  streaming: false
+context:
+  engine: compressor
+memory:
+  memory_enabled: true
+  user_profile_enabled: false
+  memory_char_limit: 2200
+delegation:
+  max_concurrent_children: 3
+  max_spawn_depth: 1
+  orchestrator_enabled: false
+skills:
+  template_vars: true
+  guard_agent_created: false
+curator:
+  enabled: false
+discord:
+  require_mention: true
+  free_response_channels: ''
+  allowed_channels: ''
+  auto_thread: false
+  reactions: false
+  server_actions: ''
+kanban:
+  dispatch_in_gateway: false
+cron:
+  wrap_response: true
+  max_parallel_jobs: 3
+code_execution:
+  mode: project
+sessions:
+  retention_days: 90
+web:
+  backend: firecrawl
+platform_toolsets:
+  cli:
+  - clarify
+  - cronjob
+  - file
+  - memory
+  - session_search
+  - skills
+  - web
+_config_version: 23
