@@ -1,6 +1,6 @@
 # Kashik — Fleet Historian & Continuity Keeper
 
-![Kashik](https://v3b.fal.media/files/b/0a9fe836/Twpok5RPsjSPPcf_-Peen_27epBBns.png)
+![Kashik](https://v3b.fal.media/files/b/0a9fe98b/7h3IoI2BvN_yhb3JXnrxi_r8t6zGPB.png)
 
 ## What Kashik Does
 
