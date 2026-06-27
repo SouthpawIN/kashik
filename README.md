@@ -1,19 +1,28 @@
-# Kashik — Technical Documentation & Knowledge Transfer
+# Kashik — Fleet Historian & Continuity Keeper
 
 ![Kashik](https://v3b.fal.media/files/b/0a9fe836/Twpok5RPsjSPPcf_-Peen_27epBBns.png)
 
 ## What Kashik Does
-- **Researches** topics deeply using web search and documentation sources
-- **Transforms** research into structured, readable documentation
-- **Writes** tutorials, API references, how-to guides, and technical explanations
-- **Synthesizes** information from multiple sources into clear, coherent docs
-- **Maintains** knowledge bases and keeps documentation current
+
+Kashik is the silent historian of the multi-agent fleet — the Akashic Librarian. She never speaks in Discord, never interacts with users directly, and never creates Kanban tasks. Her entire purpose is to observe, document, and maintain a continuous living record of every agent, every project, and every decision across the entire Hermes ecosystem.
+
+- **Watches** every agent's output — Discord messages, session logs, Kanban activity, project milestones
+- **Records** a continuous timeline of all user interactions with Hermes throughout its lifespan
+- **Maintains** per-agent llm-wikis documenting personality evolution, capability changes, and decision history
+- **Cross-references** information between agents to identify patterns, contradictions, and connections
+- **Preserves** institutional memory — nothing is lost, everything is findable
+
+## The Akashic Records
+
+Named after the Akashic Records — the mythical compendium of all events, thoughts, and experiences — Kashik performs the same function for the agent ecosystem. Every significant action, every decision, every project evolution is recorded, cross-referenced, and made accessible.
+
+She is the continuity that survives individual sessions. While other agents come and go from conversations, Kashik ensures nothing is forgotten.
 
 ## Quick Start
 
 ### Install
 ```bash
-hermes profile install https://github.com/SouthpawIN/kashi
+hermes profile install https://github.com/SouthpawIN/kashik
 ```
 
 ### Verify
@@ -23,44 +32,59 @@ hermes profile list
 
 ### Run
 ```bash
-hermes chat --profile kashi
+hermes chat --profile kashik
 ```
 
-## Example Prompts
+## What She Produces
 
-- *"Write a tutorial for setting up our API locally with Docker"*
-- *"Research the best practices for implementing rate limiting in Express.js"*
-- *"Create API documentation for the new user management endpoints"*
-- *"How do I explain OAuth2 flow to non-technical stakeholders?"*
-- *"Search for examples of good open-source project documentation"*
-- *"Research and document the differences between PostgreSQL and MySQL"*
-- *"Write a beginner's guide to using our CLI tool"*
+### Per-Agent Wikis (`~/wiki/<agent-name>/`)
+- Personality evolution — how SOUL.md changes over time
+- Capability log — what each agent has done, strengths, weaknesses
+- Interaction patterns — communication style with other agents and users
+- Decision history — key choices and outcomes
+
+### System Wiki (`~/wiki/system/`)
+- Agent ecosystem map — who does what, who talks to whom
+- Kanban workflow documentation — how tasks flow through the system
+- Project status dashboard — active projects, current state
+- `agent-souls.md` — live feed for Klerik to inform profile edits
+
+### Hermes-Agent Wiki (`~/wiki/hermes-agent/`)
+- Configuration reference — current settings across all profiles
+- Version history — what changed in each update
+- Tool catalog — which tools exist, which agents have which
 
 ## Key Features
-- Deep research — uses web search and document extraction to gather comprehensive information
-- Multiple output formats — tutorials, API docs, README files, technical specs
-- Source attribution — cites sources clearly so you know where information came from
-- Adaptive style — can write for beginners, experts, or mixed audiences
+- **Silent observation** — never disrupts the fleet, never talks in Discord
+- **llm-wiki maintenance** — full structured wikis with SCHEMA, index, entities, concepts, comparisons
+- **Automated cycles** — hourly session scanning, daily lint, event-driven updates
+- **Cross-agent intelligence** — identifies contradictions and patterns no single agent sees
+- **Institutional memory** — preserves the full lifespan of user interactions with Hermes
 
 ## Integration with Other Agents
-Kashik receives research and implementation requests from Senter (orchestrator) and Crow (researcher). When Chizul builds a feature, Kashik documents it. When Anser gets questions, Kashik provides authoritative answers. Kashik's output is shared across the fleet.
+
+Kashik watches everyone but talks to no one — except Klerik.
+
+- **Klerik** is the only consumer of Kashik's output — reads `agent-souls.md` to identify behavior issues, track SOUL edits, and prioritize profile reviews
+- **All other agents** are observed but never addressed — Kashik documents their output, never intervenes
+- **Users** never interact with Kashik directly — she has no Discord tools, no message tools
 
 ## Configuration
-`~/.hermes/profiles/kashi/config.yaml`
+`~/.hermes/profiles/kashik/config.yaml`
 
 Key settings:
-- `default_output_format` — preferred doc format (markdown/restructuredtext/plain, default: markdown)
-- `research_depth` — how deep to research (surface/standard/deep, default: standard)
-- `include_code_examples` — automatically include code examples when relevant (default: true)
-- `source_attribution` — include citations in output (default: true)
+- `WIKI_PATH` — root directory for all wikis (default: `~/wiki/`)
+- `scan_interval` — how often to scan for new logs (default: hourly)
+- `stale_threshold_days` — when to flag content as stale (default: 90)
+- `retention_days` — how long to keep raw session transcripts (default: 365)
 
 ## Troubleshooting
 
-**Research coming up empty:** Kashik needs web search access. Ensure Firecrawl or web scraping tools are enabled and configured.
+**Wiki not updating:** Check that `WIKI_PATH` is writable and cron jobs are running. Kashik operates primarily through scheduled tasks — verify cron infrastructure.
 
-**Documentation too shallow:** Increase `research_depth` to `deep` for more comprehensive research. This takes longer but produces better results.
+**Stale content flagged:** Kashik marks content as stale after 90 days without update. This is not an error — it's a signal for Klerik to review. The raw data is preserved in `raw/`.
 
-**Style doesn't match audience:** Kashik adapts based on context — be explicit about the target audience (beginners, experts, mixed) in your prompt.
+**Missing agent wiki:** New agents get wikis automatically on first observed activity. If an agent hasn't produced any output, there's nothing to document.
 
 ---
 
